@@ -1,0 +1,67 @@
+
+/**
+ * header part
+ **/
+.navbar-toggler{
+    background-color: #6abcc8;
+}
+
+/**
+ * <main> part
+ **/
+main {
+    h2,h3,h4,h5 {
+	position: relative;
+	padding: 0.3em;   
+    }
+    h2:after,h3:after,h4:after,h5:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+    }
+    h2:after {
+	height: 8px;
+	background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+    }
+    h3:after {
+	height: 6px;
+	background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+	width: 95%;
+    }
+    h4:after {
+	height: 4px;
+	background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+	width: 80%;
+    }
+    h5:after {
+	height: 2px;
+	background: repeating-linear-gradient(-45deg, skyblue, skyblue 2px, white 2px, white 4px);
+	width: 75%;
+    }
+    .image img {
+	width: 100%;
+    }
+    #toc {
+	margin-top: 2em;
+	background: #d5edf1;
+    }
+    sect1 {
+	margin-top: 2em;
+    }
+    sectionbody {
+	margin-top: 1em;
+    }
+    li p  {
+	padding-bottom: 0em;
+	margin-bottom: 0.2em;
+    }
+    .highlight {
+	padding-top: 0.4em;
+	padding-bottom: 0.2em;
+    }
+    .bg-code {
+	background: #d5edf1;
+    }
+}
