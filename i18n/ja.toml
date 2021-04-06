@@ -1,0 +1,39 @@
+
+[site_title]
+other = "Yasuhiro ABE, The University of Aizu."
+
+[site_description]
+other = "会津大学学内に向けた情報をまとめていきます。"
+
+[copyright]
+other = "Copyright 2014-2016 The University of Aizu, Yasuhiro ABE <yasu-abe@u-aizu.ac.jp>"
+
+[title_profile]
+other = "プロフィール"
+
+[title_activity]
+other = "活動概要"
+
+[profile_education]
+other = "学歴"
+
+[profile_industry]
+other = "職歴の概要"
+
+[profile_certificates]
+other = "技術系資格"
+
+[profile_year_text]
+other = ", "
+
+[activity_lecture]
+other = "出前講義・進学相談会"
+
+[activity_project]
+other = "外部委員"
+
+[activity_text_year]
+other = "年"
+
+[label_language_switch]
+other = "言語選択: "

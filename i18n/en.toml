@@ -1,0 +1,39 @@
+
+[site_title]
+other = "[Intranet] Yasuhiro ABE, The University of Aizu."
+
+[site_description]
+other = "Information for internal users."
+
+[copyright]
+other = "Copyright 2014-2016 The University of Aizu, Yasuhiro ABE <yasu-abe@u-aizu.ac.jp>"
+
+[title_profile]
+other = "Profile"
+
+[title_activity]
+other = "Activities"
+
+[profile_education]
+other = "Education"
+
+[profile_industry]
+other = "Work Experience"
+
+[profile_certificates]
+other = "Licenses and Certifications"
+
+[profile_year_text]
+other = ", "
+
+[activity_lecture]
+other = "Off-Campus Lectures"
+
+[activity_project]
+other = "Off-Campus Activities"
+
+[activity_text_year]
+other = " "
+
+[label_language_switch]
+other = "Language select: "
