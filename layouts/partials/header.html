@@ -1,0 +1,45 @@
+
+<div class="border-1 m-0 p-0" style="border-top: 0.2em solid #008e8e;">
+</div>
+
+<div class="container">
+  <nav class="nav navbar navbar-expand-lg navbar-light px-0 pb-0 pt-0">
+    <a class="nav-item nav-brand" href="/" alt="return to the top page">
+      <img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}">
+    </a>
+    <div class="nav-item h3 pb-0 pt-0 pl-4">
+      <a class="nav-link pb-0" href="{{ "/" | relLangURL }}">YasuhiroABE</a>
+    </div>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pd-nav" aria-controls="pd-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="pd-nav">
+      <ul class="nav ml-auto">
+	<li class="nav-item"><a class="nav-link" href="{{ "profile/" | relLangURL }}">{{ i18n "title_profile" . }}</a></li>
+	<li class="nav-item"><a class="nav-link" href="{{ "ja/sccp/" | relURL }}">{{ .Site.Params.title_sccp  }}</a></li>
+	<li class="nav-item"><a class="nav-link" href="{{ "ja/reports/" | relURL }}">{{ .Site.Params.title_activity }}</a></li>
+	<li class="nav-item"><a class="nav-link" href="https://www.u-aizu.ac.jp/~yasu-abe/">{{ .Site.Params.title_extweb }}</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="border-1 mt-0 pt-0 mb-0 pb-0 navbar-light bg-light">
+  <header class="container">
+    <div class="row">
+      <nav class="col-8">
+	<ol class="breadcrumb m-2 p-0 bg-light">
+          {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+	</ol>
+      </nav>
+      <div class="col-4 pt-2 text-right">
+	{{ if .IsTranslated }}
+	{{ range .Translations }}
+	[ Switch to <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
+	{{ end }}
+	{{ end }}
+      </div><!-- /#breadcrumb -->
+    </div>
+  </header>
+</div>
+
+<div class="mt-2">
