@@ -14,10 +14,11 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pd-nav" aria-controls="pd-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="pd-nav">
       <ul class="nav ml-auto">
-	<li class="nav-item"><a class="nav-link" href="{{ "profile/" | relLangURL }}">{{ i18n "title_profile" . }}</a></li>
-	<li class="nav-item"><a class="nav-link" href="{{ "ja/sccp/" | relURL }}">{{ .Site.Params.title_sccp  }}</a></li>
-	<li class="nav-item"><a class="nav-link" href="{{ "ja/reports/" | relURL }}">{{ .Site.Params.title_activity }}</a></li>
-	<li class="nav-item"><a class="nav-link" href="https://www.u-aizu.ac.jp/~yasu-abe/">{{ .Site.Params.title_extweb }}</a></li>
+	{{ $data := index $.Site.Data .Site.Language.Lang }}
+	{{ $menu := index $data.menu "main-nav" }}
+	{{ range  $menu }}
+	<li class="nav-item"><a href="{{ .url | relLangURL }}" alt="link to {{ .name }}" class="nav-link">{{ .name }}</a></li>
+	{{ end }}
       </ul>
     </div>
   </nav>
