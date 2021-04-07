@@ -34,7 +34,7 @@
       <div class="col-4 pt-2 text-right">
 	{{ if .IsTranslated }}
 	{{ range .Translations }}
-	[ Switch to <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
+	[ {{ i18n "label_language_switch" }}  <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
 	{{ end }}
 	{{ end }}
       </div><!-- /#breadcrumb -->
