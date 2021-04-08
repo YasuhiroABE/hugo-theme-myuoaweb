@@ -17,7 +17,11 @@
 	{{ $data := index $.Site.Data .Site.Language.Lang }}
 	{{ $menu := index $data.menu "main-nav" }}
 	{{ range  $menu }}
+	{{ if eq .uselang "true" }}
 	<li class="nav-item"><a href="{{ .url | relLangURL }}" alt="link to {{ .name }}" class="nav-link">{{ .name }}</a></li>
+	{{ else }}
+	<li class="nav-item"><a href="{{ .url | relURL }}" alt="link to {{ .name }}" class="nav-link">{{ .name }}</a></li>
+	{{ end }}
 	{{ end }}
       </ul>
     </div>
