@@ -55,7 +55,7 @@ main {
     }
     li p  {
 	padding-bottom: 0em;
-	margin-bottom: 0.2em;
+	margin-bottom: 0em;
     }
     .highlight {
 	padding-top: 0.4em;
@@ -63,5 +63,8 @@ main {
     }
     .bg-code {
 	background: #d5edf1;
+    }
+    .bg-kbd {
+	background: #191975;
     }
 }
