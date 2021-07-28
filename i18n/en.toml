@@ -37,3 +37,6 @@ other = " "
 
 [label_language_switch]
 other = "Language select: "
+
+[label_toc]
+other = "Table of Contents"

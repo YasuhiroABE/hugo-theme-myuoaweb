@@ -1,5 +1,9 @@
 {{ define "main" }}
 <div class="col-12">
+    <div class="toc" id="toc">
+    <div class="toctitle">{{ i18n "label_toc" . }}</div>
+    {{ .TableOfContents }}
+  </div>
   {{ .Content }}
 </div>
 {{ if isset .Params "show_year" }}
