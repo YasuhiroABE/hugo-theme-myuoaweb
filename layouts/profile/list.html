@@ -1,6 +1,5 @@
 {{ define "main" }}
   <!-- -*- mode:text ; coding: utf-8-unix -*- -->
-  {{ .Content }}
   {{ $local_data := index .Site.Data .Site.LanguageCode }}
   <!-- 学歴 -->
   {{ $data :=  index $local_data.profile "education" }}
@@ -36,4 +35,5 @@
   </ul>
   <p>(* <a href="https://lpi.org/v/LPI000038130/ueftsez3qe" target="_blank" rel="noopener noreferrer">LPI proof of certification</a>)</p>
   </div>
+  {{ .Content }}
 {{ end }}
