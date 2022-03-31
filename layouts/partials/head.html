@@ -3,7 +3,7 @@
   <title>{{ i18n "site_title" . }} | {{ .Title }}</title>
   <meta name="description" content="{{ .Site.Params.site_description }}">
   <meta name="author" content="Yasuhiro ABE <yasu-abe@u-aizu.ac.jp>">
-  <meta name="copyright" content="Copyright 2019 The University of Aizu, Yasuhiro ABE &lt;yasu-abe@u-aizu.ac.jp&gt;">
+  <meta name="copyright" content="Copyright 2022 The University of Aizu, Yasuhiro ABE &lt;yasu-abe@u-aizu.ac.jp&gt;">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,shrink-to-fit=no" />
 
   <!-- different language pages -->
@@ -13,16 +13,11 @@
   {{ end }}
   {{ end }}
 
-  <!-- bootstrap4 -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-	  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-  <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
-  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}" />
+  <!-- bootstrap5 -->
+  {{ $style := resources.Get "sass/my-bootstrap.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
+  <!-- customize css -->
   {{ $style := resources.Get "sass/asciidoc.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{ $style := resources.Get "sass/customize.scss" | toCSS | minify | fingerprint }}
