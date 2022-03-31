@@ -9,17 +9,19 @@
 	<img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}">
       </a>
       
+
+      <ul class="navbar-nav flex-grow-1 mx-sm-5">
+	<li class="nav-item">
+	  <a class="nav-link h1 active my-0 py-0" href="{{ "/" | relLangURL }}">YasuhiroABE</a>
+	</li>
+      </ul>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-	<ul class="navbar-nav col-xl-7 col-5">
-	  <li class="nav-item">
-	    <a class="nav-link h1 active my-0 py-0" href="{{ "/" | relLangURL }}">YasuhiroABE</a>
-	  </li>
-	</ul>
-	<ul class="navbar-nav col-xl-5 col-7">
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarResponsive">
+	<ul class="navbar-nav">
 	  {{ $data := index $.Site.Data .Site.Language.Lang }}
 	  {{ $menu := index $data.menu "main-nav" }}
 	  {{ range  $menu }}
