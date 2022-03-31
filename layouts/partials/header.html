@@ -1,50 +1,55 @@
 
-<div class="border-1 m-0 p-0" style="border-top: 0.2em solid #008e8e;">
-</div>
+<div class="border-4 m-0 p-0" style="border-top: 0.1em solid #008e8e;"></div>
 
 <div class="container">
-  <nav class="nav navbar navbar-expand-lg navbar-light px-0 pb-0 pt-0">
-    <a class="nav-item nav-brand" href="/" alt="return to the top page">
-      <img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}">
-    </a>
-    <div class="nav-item h3 pb-0 pt-0 pl-4">
-      <a class="nav-link pb-0" href="{{ "/" | relLangURL }}">YasuhiroABE</a>
-    </div>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#pd-nav" aria-controls="pd-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="pd-nav">
-      <ul class="nav ml-auto">
-	{{ $data := index $.Site.Data .Site.Language.Lang }}
-	{{ $menu := index $data.menu "main-nav" }}
-	{{ range  $menu }}
-	{{ if eq .uselang "true" }}
-	<li class="nav-item"><a href="{{ .url | relLangURL }}" alt="link to {{ .name }}" class="nav-link">{{ .name }}</a></li>
-	{{ else }}
-	<li class="nav-item"><a href="{{ .url | relURL }}" alt="link to {{ .name }}" class="nav-link">{{ .name }}</a></li>
-	{{ end }}
-	{{ end }}
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-light px-0 pb-0 pt-0 d-print-none" role="navigation">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand nav-item p-0" href="/" alt="Return to the top page">
+	<img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+	<ul class="navbar-nav col-xl-7 col-5">
+	  <li class="nav-item">
+	    <a class="nav-link h1 active my-0 py-0" href="{{ "/" | relLangURL }}">YasuhiroABE</a>
+	  </li>
+	</ul>
+	<ul class="navbar-nav col-xl-5 col-7">
+	  {{ $data := index $.Site.Data .Site.Language.Lang }}
+	  {{ $menu := index $data.menu "main-nav" }}
+	  {{ range  $menu }}
+	  {{ if eq .uselang "true" }}
+	  <li class="nav-item"><a href="{{ .url | relLangURL }}" alt="link to {{ .name }}" class="nav-link h5">{{ .name }}</a></li>
+	  {{ else }}
+	  <li class="nav-item"><a href="{{ .url | relURL }}" alt="link to {{ .name }}" class="nav-link h5 active">{{ .name }}</a></li>
+	  {{ end }}
+	  {{ end }}
+	</ul>
+      </div>
     </div>
   </nav>
-</div>
 
-<div class="border-1 mt-0 pt-0 mb-0 pb-0 navbar-light bg-light">
-  <header class="container">
-    <div class="row">
-      <nav class="col-8">
-	<ol class="breadcrumb m-2 p-0 bg-light">
+  <div class="container row my-2 py-2 bg-light d-print">
+    <div class="col-sm-6">
+      <nav style="--bs-breadcrumb-divider: '→';" aria-label="breadcrumb" role="navigation">
+	<ol class="breadcrumb mb-0">
           {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
 	</ol>
       </nav>
-      <div class="col-4 pt-2 text-right">
-	{{ if .IsTranslated }}
-	{{ range .Translations }}
-	[ {{ i18n "label_language_switch" }}  <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
-	{{ end }}
-	{{ end }}
-      </div><!-- /#breadcrumb -->
     </div>
-  </header>
+    <div class="col-sm-6">
+      {{ if .IsTranslated }}
+      {{ range .Translations }}
+      <span class="float-lg-end">[ {{ i18n "label_language_switch" }}</end>  <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
 </div>
 
-<div class="mt-2">
+
