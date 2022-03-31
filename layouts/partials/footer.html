@@ -1,19 +1,14 @@
 <!-- -*- mode: html ; coding: utf-8 -*- -->
-</div> <!-- .mt-2 -->
 
-<div class="p-4 bg-primary">
-  <footer class="container" style="color:white;">
-    <div class="row">
-      <div class="col-sm-8">
-	<p>Updated: {{ .Date }}</p>
-      </div>
-      {{ if .Site.Params.enable_intrasearch }}
-      {{ template "intrasearch" }}
-      {{ end }}
-      <div class="col-sm-12">
-	<p>{{ i18n "copyright" . }}</p>
-	<p>{{ .Site.Params.notice_copyright | safeHTML }}</p>
-      </div>
+<footer class="pt-4 pb-2" style="color:white;background-color:#289785;">
+  <div class="container row">
+    <div class="col-sm-12">
+      <p>Updated: {{ .Date }}</p>
+    {{ if .Site.Params.enable_intrasearch }}
+    {{ template "intrasearch" }}
+    {{ end }}
+      <p>{{ i18n "copyright" . }}</p>
+      <p>{{ .Site.Params.notice_copyright | safeHTML }}</p>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>
