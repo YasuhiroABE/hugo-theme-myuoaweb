@@ -1,28 +1,28 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{{ i18n "site_title" . }} | {{ .Title }}</title>
-  <meta name="description" content="{{ .Site.Params.site_description }}">
+  <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="author" content="Yasuhiro ABE <yasu-abe@u-aizu.ac.jp>">
   <meta name="copyright" content="Copyright 2022 The University of Aizu, Yasuhiro ABE &lt;yasu-abe@u-aizu.ac.jp&gt;">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  {{ hugo.Generator }}
   <!-- different language pages -->
-  {{ if .IsTranslated }}
-  {{ range .Translations }}
+  {{- if .IsTranslated }}
+  {{- range .Translations }}
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
-  {{ end }}
-  {{ end }}
+  {{- end }}
+  {{- end }}
 
   <!-- bootstrap5 -->
-  {{ $style := resources.Get "sass/my-bootstrap.scss" | toCSS | minify | fingerprint }}  
+  {{- $style := resources.Get "sass/my-bootstrap.scss" | toCSS | minify | fingerprint }}  
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  {{ $jscode := resources.Get "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" }}
+  {{- $jscode := resources.Get "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" }}
   <script src="{{ $jscode.Permalink }}" ></script>
   
   <!-- customize css -->
-  {{ $style := resources.Get "sass/asciidoc.scss" | toCSS | minify | fingerprint }}
+  {{- $style := resources.Get "sass/asciidoc.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  {{ $style := resources.Get "sass/customize.scss" | toCSS | minify | fingerprint }}
+  {{- $style := resources.Get "sass/customize.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
   
   <!-- Loading local JavaScript Library -->
