@@ -1,0 +1,8 @@
+<!-- Reference: https://gist.github.com/hahwul/730a4f3871730246a80622855891be77 -->
+<div id="asciinema-{{ with .Get "key" }}{{ . }}{{ end }}">
+  <script>
+    AsciinemaPlayer.create("https://asciinema.org/a/{{ with .Get "key" }}{{ . }}{{ end }}.cast", document.getElementById('asciinema-{{ with .Get "key" }}{{ . }}{{ end }}'), {
+	poster: 'npt:1:23'
+    });
+  </script>
+</div>

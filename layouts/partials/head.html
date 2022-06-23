@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{- $jscode := resources.Get "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" }}
   <script src="{{ $jscode.Permalink }}" ></script>
+
+  <script src="{{ .Site.BaseURL }}js/asciinema-player.min.js"></script>
+  {{- $style := resources.Get "sass/asciinema-player.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
   
   <!-- customize css -->
   {{- $style := resources.Get "sass/asciidoc.scss" | toCSS | minify | fingerprint }}
