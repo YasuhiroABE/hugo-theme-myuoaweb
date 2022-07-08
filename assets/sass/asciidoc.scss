@@ -44,22 +44,25 @@ main {
 	width: 100%;
     }
     #toc {
-	margin-top: 2em;
 	background: #d5edf1;
-    }
-    sect1 {
-	margin-top: 2em;
+	padding: 1em;
     }
     sectionbody {
-	margin-top: 1em;
+	// margin-top: 1em;
     }
     li p  {
-	padding-bottom: 0em;
+	padding-bottom: 0.1em;
 	margin-bottom: 0em;
     }
-    .highlight {
-	padding-top: 0.4em;
-	padding-bottom: 0.2em;
+    .highlight { // reset 
+	margin: 0;
+    }
+    .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info, .bg-dark, .bg-white, .bg-transparent, .bg-code, .bg-kbd {
+	padding: 1em 0.5em 1em 1em;
+	margin-bottom: 1em;
+	p {
+	    margin: 0em;
+	}
     }
     .bg-code {
 	background: #d5edf1;
@@ -71,3 +74,4 @@ main {
 	color: #ffffff;
     }
 }
+
