@@ -50,15 +50,17 @@ main {
     sectionbody {
 	// margin-top: 1em;
     }
-    li p  {
-	padding-bottom: 0.1em;
-	margin-bottom: 0em;
+    div.ulist li p {
+	margin-bottom: 0.3em;
+    }
+    div.ulist ul {
+	margin-bottom: 0;
     }
     .highlight { // reset 
 	margin: 0;
     }
     .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info, .bg-dark, .bg-white, .bg-transparent, .bg-code, .bg-kbd {
-	padding: 1em 0.5em 1em 1em;
+	padding: 1em;
 	margin-bottom: 1em;
 	p {
 	    margin: 0em;
