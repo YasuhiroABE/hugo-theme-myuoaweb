@@ -53,7 +53,7 @@ main {
     div.ulist li p {
 	margin-bottom: 0.3em;
     }
-    div.ulist ul {
+    div.ulist ul, #toc ul {
 	margin-bottom: 0;
     }
     .highlight { // reset 
