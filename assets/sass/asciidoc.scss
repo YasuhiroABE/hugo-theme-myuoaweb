@@ -47,14 +47,17 @@ main {
 	background: #d5edf1;
 	padding: 1em;
     }
-    sectionbody {
-	// margin-top: 1em;
+    .sectionbody {
+	margin-top: 1em;
     }
     div.ulist li p {
 	margin-bottom: 0.3em;
     }
-    div.ulist ul, div.dlist dl, div.olist ol, #toc ul {
+    #toc ul {
 	margin-bottom: 0;
+    }
+    div.ulist ul, div.dlist dl, div.olist ol {
+	margin-bottom: 1.5em;
     }
     .highlight { // reset 
 	margin: 0;
