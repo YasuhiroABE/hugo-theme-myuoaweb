@@ -50,7 +50,7 @@ main {
     .sectionbody {
 	margin-top: 1em;
     }
-    div.ulist li p {
+    div.ulist li p, div.olist ol p, div.dlist dl p {
 	margin-bottom: 0.3em;
     }
     #toc ul {
