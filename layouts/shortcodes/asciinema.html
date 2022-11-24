@@ -3,8 +3,8 @@
   <script>
     AsciinemaPlayer.create("https://asciinema.org/a/{{ with .Get "key" }}{{ . }}{{ end }}.cast", document.getElementById('asciinema-{{ with .Get "key" }}{{ . }}{{ end }}'), {
 	poster: 'npt:1:23',
-	{{ if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
-	{{ if .Get "preload" }}preload: "{{ .Get "preload" }}",{{ end }}
+	{{- if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
+	{{- if .Get "preload" }}preload: "{{ .Get "preload" }}",{{ end }}
     });
   </script>
 </div>

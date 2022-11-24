@@ -1,73 +1,72 @@
-{{ define "main" }}
+{{- define "main" }}
 <div class="col-12">
     <div class="toc hidden-print" id="toc">
     <div class="toctitle">{{ i18n "label_toc" . }}</div>
-    {{ .TableOfContents }}
+    {{- .TableOfContents }}
   </div>
-  {{ .Content }}
+  {{- .Content }}
 </div>
-{{ if isset .Params "show_year" }}
+{{- if isset .Params "show_year" }}
 <div class="col-12">
   <h2>年度毎の資料</h2>
 </div>
 <div class="container row">
-  {{ range sort .Sections "Title" "desc"  }}
+  {{- range sort .Sections "Title" "desc"  }}
    <div class="col-sm-4 h3"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-   {{ end }}
+   {{- end }}
 </div>
-{{ end }}
+{{- end }}
 
-{{ if isset .Params "manual" }}
+{{- if isset .Params "manual" }}
 <div class="col-12">
   <h2>機材の説明・使い方ガイド</h2>
 </div>
-{{ $.Scratch.Set "index0" "0" }}
-{{ $.Scratch.Set "index1" "0" }}
-{{ $.Scratch.Set "index2" "0" }}
-{{ $.Scratch.Set "index3" "0" }}
-{{ range $item := sort .Pages "Title" }}
-{{ if eq (substr $item.Title 0 1) "0" }}
-{{ if eq ($.Scratch.Get "index0") "0" }}
+{{- $.Scratch.Set "index0" "0" }}
+{{- $.Scratch.Set "index1" "0" }}
+{{- $.Scratch.Set "index2" "0" }}
+{{- $.Scratch.Set "index3" "0" }}
+{{- range $item := sort .Pages "Title" }}
+{{- if eq (substr $item.Title 0 1) "0" }}
+{{- if eq ($.Scratch.Get "index0") "0" }}
 <div class="col-12">
   <h3>基本的な事柄について</h3>
-  {{ $.Scratch.Set "index0" "over" }}
+  {{- $.Scratch.Set "index0" "over" }}
   <ul>
-    {{ end }}
+    {{- end }}
     <li class="manual"><a href="{{ $item.RelPermalink }}">{{ substr $item.Title 4 }}</a></li>
-    {{ else if eq (substr $item.Title 0 1) "1" }}
-    {{ if eq ($.Scratch.Get "index1") "0" }}
+    {{- else if eq (substr $item.Title 0 1) "1" }}
+    {{- if eq ($.Scratch.Get "index1") "0" }}
   </ul>
 </div>
 <div class="col-12">
   <h3>SCCPで利用するk8s環境について</h3>
-  {{ $.Scratch.Set "index1" "over" }}
+  {{- $.Scratch.Set "index1" "over" }}
   <ul>
-    {{ end }}
+    {{- end }}
     <li class="manual"><a href="{{ $item.RelPermalink }}">{{ substr $item.Title 4 }}</a></li>
-    {{ else if eq (substr $item.Title 0 1) "2" }}
-    {{ if eq ($.Scratch.Get "index2") "0" }}
+    {{- else if eq (substr $item.Title 0 1) "2" }}
+    {{- if eq ($.Scratch.Get "index2") "0" }}
   </ul>
 </div>
 <div class="col-12">
   <h3>チュートリアル</h3>
-  {{ $.Scratch.Set "index2" "over" }}
+  {{- $.Scratch.Set "index2" "over" }}
   <ul>
-    {{ end }}
+    {{- end }}
     <li class="manual"><a href="{{ $item.RelPermalink }}">{{ substr $item.Title 4 }}</a></li>
-    {{ else }}
-    {{ if eq ($.Scratch.Get "index3") "0" }}
+    {{- else }}
+    {{- if eq ($.Scratch.Get "index3") "0" }}
   </ul>
 </div>
 <div class="col-12">
   <h3>その他</h3>
-  {{ $.Scratch.Set "index3" "over" }}
+  {{- $.Scratch.Set "index3" "over" }}
   <ul>
-    {{ end }}
+    {{- end }}
     <li class="manual"><a href="{{ $item.RelPermalink }}">{{ substr $item.Title 4 }}</a></li>
-    {{ end }}
-    {{ end }}
+    {{- end }}
+    {{- end }}
   </ul>
-  {{ end }}  
+  {{- end }}  
 </div>
-{{ end }}
-
+{{- end }}

@@ -1,9 +1,9 @@
-{{ define "main" }}
+{{- define "main" }}
 <div class="col-12">
   <div class="toc hidden-print" id="toc">
     <div class="toctitle">{{ i18n "label_toc" . }}</div>
-    {{ .TableOfContents }}
+    {{- .TableOfContents }}
   </div>
-  {{ .Content }}
+  {{- .Content }}
 </div>
-{{ end }}
+{{- end }}

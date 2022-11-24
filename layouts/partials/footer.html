@@ -4,9 +4,9 @@
     <div class="col-sm-12">
       <p>Updated: {{ .Date }}</p>
       <div class="px-3">
-	{{ if .Site.Params.enable_intrasearch }}
-	{{ template "intrasearch" }}
-	{{ end }}
+	{{- if .Site.Params.enable_intrasearch }}
+	{{- template "intrasearch" }}
+	{{- end }}
       </div>
       <p class="pt-2">{{ i18n "copyright" . }}
 	<br />{{ .Site.Params.notice_copyright | safeHTML }}
