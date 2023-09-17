@@ -62,21 +62,53 @@ main {
     .highlight { // reset 
 	margin: 0;
     }
-    .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info, .bg-dark, .bg-white, .bg-transparent, .bg-code, .bg-kbd {
-	padding: 1em;
-	margin-bottom: 1em;
+    .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-warning, .bg-info, .bg-dark, .bg-white, .bg-transparent, .bg-code, .bg-kbd, .bg-result {
+	padding: 0em;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	margin-top: 0em;
 	p {
 	    margin: 0em;
 	}
     }
+    // specific code/pre block - common setting
+    .bg-code, .bg-result, .bg-kbd {
+	padding-top: 0.1em;
+    }
+    // specific code/pre block - color setting
     .bg-code {
 	background: #d5edf1;
+	code {
+	    color: #191975;
+	}
     }
-    .bg-kbd {
+    .bg-kbd, .bg-result {
 	background: #191975;
+	pre {
+	    color: #ffffff;
+	}
     }
-    .bg-kbd pre {
+    // top left-corner label - common setting
+    .bg-code:before, .bg-result:before, .bg-kbd:before {
+	margin: -1em;
+	font-size: 0.8em;
+    }
+    // top left-corner-labe color and text setting
+    .bg-code:before {
+	background: #3e3e3e;
 	color: #ffffff;
+	content: "【Script Code】\A";
+    }
+    .bg-result:before {
+	background: #3e3e3e;
+	color: #ffffff;
+	content: "【Terminal - Execution Result】\A";
+    }
+    .bg-kbd:before {
+	background: #3e3e3e;
+	color: #ffffff;
+	content: "【Terminal - Command-line】\A";
     }
 }
 
