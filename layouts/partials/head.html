@@ -49,16 +49,19 @@
   <script src="{{ "js/clipboard.min.js" | relURL }}" type="text/javascript"></script>
   <script type="text/javascript">
     $(function() {
-	$(".bg-kbd, .bg-code").on('click', function(e) {
-	    console.log(e);
-	    const textCopied = ClipboardJS.copy($(this).select().text().trim());
-	    $(this).attr('data-bs-toggle','tooltip').attr('title', 'Copied!').tooltip("show");
-	    console.log($(this));
-	    console.log('copied!');
+	// Reference #1: https://qiita.com/uuuno/items/5a215d9bfeabec8adbc3
+	// Reference #2: https://developer.mozilla.org/ja/docs/Web/API/Window/getSelection
+	$(".bg-kbd, .bg-code").on('mouseup', function(e) {
+	    if(window.getSelection) {
+		const selectedText = window.getSelection().toString().trim();
+		if(selectedText) {
+		    const textCopied = ClipboardJS.copy(selectedText);
+		    $(this).attr('data-bs-toggle','tooltip').attr('title', 'Copied!').tooltip("show");
+		}
+	    }
 	});
 	$(".bg-kbd, .bg-code").on("mouseout", function() {
 	    $(this).removeAttr("title data-bs-toggle").tooltip('dispose');
-	    console.log('blur');
 	});
     });
   </script>

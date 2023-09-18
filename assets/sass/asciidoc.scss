@@ -92,13 +92,18 @@ main {
     // top left-corner label - common setting
     .bg-code:before, .bg-result:before, .bg-kbd:before {
 	margin: -1em;
+	padding-top: 0.4em;
+	padding-right: 0.2em;
 	font-size: 0.8em;
+
+	white-space: pre-wrap;
+	word-wrap: break-word;
     }
     // top left-corner-labe color and text setting
     .bg-code:before {
 	background: #3e3e3e;
 	color: #ffffff;
-	content: "【Script Code】\A";
+	content: "【Code】\A";
     }
     .bg-result:before {
 	background: #3e3e3e;
