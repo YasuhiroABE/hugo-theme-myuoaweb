@@ -71,6 +71,9 @@ main {
 	p {
 	    margin: 0em;
 	}
+	pre.highlight {
+	    padding-top: 1em;
+	}
     }
     // specific code/pre block - common setting
     .bg-code, .bg-result, .bg-kbd {
@@ -88,6 +91,9 @@ main {
 	pre {
 	    color: #ffffff;
 	}
+    }
+    .bg-result {
+	background: #491975;
     }
     // top left-corner label - common setting
     .bg-code:before, .bg-result:before, .bg-kbd:before {
