@@ -1,10 +1,10 @@
 
 <div class="border-4 m-0 p-0" style="border-top: 0.1em solid #008e8e;"></div>
 
-<nav class="navbar navbar-expand-lg navbar-light px-5 pb-0 pt-0 d-print-none" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-light px-5 pb-0 pt-0 d-print-none">
   <div class="container-fluid">
-    <a class="navbar-brand nav-item p-0" href="/" alt="Return to the top page">
-      <img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}">
+    <a class="navbar-brand nav-item p-0" href="/">
+      <img class="nav-link" width="112px" height="64px" src="{{ "images/mono2g_tp.png" | relURL }}" alt="Return to the top page" />
     </a>
     <ul class="navbar-nav flex-grow-1 mx-sm-5">
       <li class="nav-item">
@@ -20,9 +20,9 @@
 	{{- $menu := index $data.menu "main-nav" }}
 	{{- range  $menu }}
 	{{- if eq .uselang "true" }}
-	<li class="nav-item"><a href="{{ .url | relLangURL }}" alt="link to {{ .name }}" class="nav-link active">{{ .name }}</a></li>
+	<li class="nav-item"><a href="{{ .url | relLangURL }}" class="nav-link active">{{ .name }}</a></li>
 	{{- else }}
-	<li class="nav-item"><a href="{{ .url | relURL }}" alt="link to {{ .name }}" class="nav-link active">{{ .name }}</a></li>
+	<li class="nav-item"><a href="{{ .url | relURL }}" class="nav-link active">{{ .name }}</a></li>
 	{{- end }}
 	{{- end }}
       </ul>
@@ -33,7 +33,7 @@
 <div class="container-fluid sticky-top">
   <div class="row px-5 py-3 bg-light d-print">
     <div class="col-sm-6">
-      <nav style="--bs-breadcrumb-divider: '→';" aria-label="breadcrumb" role="navigation">
+      <nav style="--bs-breadcrumb-divider: '→';" aria-label="breadcrumb">
 	<ol class="breadcrumb mb-0">
           {{- template "breadcrumbnav" (dict "p1" . "p2" .) }}
 	</ol>
@@ -42,7 +42,7 @@
     <div class="col-sm-6">
       {{- if .IsTranslated }}
       {{- range .Translations }}
-      <span class="float-lg-end">[ {{ i18n "label_language_switch" }}</end>  <a href="{{ .Permalink }}" alt="Switch to {{.Language.LanguageName}}">{{ .Language.LanguageName }}</a> ]
+      <span class="float-lg-end">[ {{ i18n "label_language_switch" }} <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a> ]</span>
 {{- end }}
 {{- end }}
     </div>
