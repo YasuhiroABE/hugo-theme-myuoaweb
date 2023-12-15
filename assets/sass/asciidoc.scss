@@ -72,12 +72,15 @@ main {
 	    margin: 0em;
 	}
 	pre.highlight {
-	    padding-top: 1em;
+	    padding-top: 0.3em;
 	}
     }
     // specific code/pre block - common setting
     .bg-code, .bg-result, .bg-kbd {
 	padding-top: 0.1em;
+	pre.highlight {
+	    padding-top: 1em;
+	}
     }
     // specific code/pre block - color setting
     .bg-code {
