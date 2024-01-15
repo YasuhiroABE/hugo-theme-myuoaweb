@@ -28,10 +28,8 @@
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{- $style := resources.Get "sass/customize.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  <!-- Loading local JavaScript Library -->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&family=Noto+Sans+JP&display=swap');
-  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
 
   <!-- favicon -->
   {{- $favicon := resources.Get "images/favicon/apple-touch-icon.png" }}
