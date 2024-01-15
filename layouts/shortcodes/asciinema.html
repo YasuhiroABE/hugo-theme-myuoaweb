@@ -1,10 +1,7 @@
-<!-- Reference: https://gist.github.com/hahwul/730a4f3871730246a80622855891be77 -->
+<!-- Reference: https://gist.github.com/hahwul/730a4f3871730246a80622855891be77 will be modified by the official javascript -->
 <div id="asciinema-{{ with .Get "key" }}{{ . }}{{ end }}">
-  <script>
-    AsciinemaPlayer.create("https://asciinema.org/a/{{ with .Get "key" }}{{ . }}{{ end }}.cast", document.getElementById('asciinema-{{ with .Get "key" }}{{ . }}{{ end }}'), {
-	poster: 'npt:1:23',
-	{{- if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
-	{{- if .Get "preload" }}preload: "{{ .Get "preload" }}",{{ end }}
-    });
-  </script>
+  <script async id="asciicast-{{ with .Get "key" }}{{ . }}{{ end }}" src="https://asciinema.org/a/{{ with .Get "key" }}{{ . }}{{ end }}.js"></script>
+  <div class="text-end">
+    [ <a href="https://asciinema.org/a/{{ with .Get "key" }}{{ . }}{{ end }}" target="_blank">View on the Asciinema Site</a> ]
+  </div>
 </div>

@@ -125,7 +125,7 @@ main {
 	content: "【Terminal - Command-line】\A";
     }
 
-    .paragraph {
+    .paragraph, dd, li {
 	margin-top: 0.5em;
 	code {
 	    background: #efefef;
