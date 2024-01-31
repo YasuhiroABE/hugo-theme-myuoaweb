@@ -36,7 +36,7 @@ other = "Regional Contribution Activities, etc."
 other = " "
 
 [label_language_switch]
-other = "言語選択: "
+other = "言語選択 (Language select): "
 
 [label_toc]
 other = "Table of Contents"
