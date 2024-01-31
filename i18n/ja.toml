@@ -36,7 +36,7 @@ other = "地域貢献等"
 other = "年"
 
 [label_language_switch]
-other = "言語選択: "
+other = "Language select: "
 
 [label_toc]
 other = "目次"
