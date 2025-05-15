@@ -1,8 +1,19 @@
-
+b
 main {
     .wf-sawarabigothic { font-family: "Sawarabi Gothic"; }
     #toc {
 	margin-top: 1em;
 	margin-bottom: 2em;
+    }
+}
+
+.bg-kbd.shell {
+    code::before {
+	content: "$ ";
+    }
+}
+.bg-kbd.venv {
+    code::before {
+	content: "(venv) $ ";
     }
 }
