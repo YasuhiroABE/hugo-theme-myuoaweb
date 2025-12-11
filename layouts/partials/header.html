@@ -20,9 +20,9 @@
 	{{- $menu := index $data.menu "main-nav" }}
 	{{- range  $menu }}
 	{{- if eq .uselang "true" }}
-	<li class="nav-item"><a href="{{ .url | relLangURL }}" class="nav-link active">{{ .name }}</a></li>
+	<li class="nav-item border-start"><a href="{{ .url | relLangURL }}" class="nav-link active">{{ .name }}</a></li>
 	{{- else }}
-	<li class="nav-item"><a href="{{ .url | relURL }}" class="nav-link active">{{ .name }}</a></li>
+	<li class="nav-item border-start"><a href="{{ .url | relURL }}" class="nav-link active">{{ .name }}</a></li>
 	{{- end }}
 	{{- end }}
       </ul>
