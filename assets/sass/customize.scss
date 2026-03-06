@@ -17,3 +17,10 @@ main {
 	content: "(venv) $ ";
     }
 }
+
+.bg-kbd.ansible {
+    code::before {
+	content: "(ansible) $ ";
+    }
+}
+
